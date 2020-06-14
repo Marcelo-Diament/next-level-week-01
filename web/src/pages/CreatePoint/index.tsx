@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
+import { Map, TileLayer, Marker } from 'react-leaflet';
 import './styles.css';
 import logo from '../../assets/logo.svg';
 
@@ -24,17 +25,17 @@ const CreatePoint = () => {
                     </legend>
                     <div className="field">
                         <label htmlFor="name">Nome da Entidade</label>
-                        <input type="text" name="name" id="name"/>
+                        <input type="text" name="name" id="name" />
                     </div>
 
                     <div className="field-group">
                         <div className="field">
                             <label htmlFor="email">Email</label>
-                            <input type="email" name="email" id="email"/>
+                            <input type="email" name="email" id="email" />
                         </div>
                         <div className="field">
                             <label htmlFor="whatsapp">Whatsapp</label>
-                            <input type="text" name="whatsapp" id="whatsapp"/>
+                            <input type="text" name="whatsapp" id="whatsapp" />
                         </div>
                     </div>
 
@@ -44,6 +45,11 @@ const CreatePoint = () => {
                         <h2>Endereço</h2>
                         <span>Selecione o endereço no mapa</span>
                     </legend>
+                    <Map center={[-23.5797743, -46.7709992]} zoom={15}>
+                        <TileLayer attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        <Marker position={[-23.5797743, -46.7709992]} />
+                    </Map>
                     <div className="field-group">
                         <div className="field">
                             <label htmlFor="uf">Estado</label>
@@ -65,12 +71,12 @@ const CreatePoint = () => {
                         <span>Selecione os itens aceitados abaixo</span>
                     </legend>
                     <ul className="items-grid">
-                        <li><img src="http://localhost:3333/uploads/baterias.svg" alt="Baterias"/><span>Baterias</span></li>
-                        <li><img src="http://localhost:3333/uploads/eletronicos.svg" alt="Pilhas e Eletrônicos"/><span>Pilhas e Eletrônicos</span></li>
-                        <li><img src="http://localhost:3333/uploads/lampadas.svg" alt="Lâmpadas"/><span>Lâmpadas</span></li>
-                        <li><img src="http://localhost:3333/uploads/oleo.svg" alt="Óleo de Cozinha"/><span>Óleo de Cozinha</span></li>
-                        <li><img src="http://localhost:3333/uploads/organicos.svg" alt="Orgânicos"/><span>Orgânicos</span></li>
-                        <li className="selected"><img src="http://localhost:3333/uploads/papeis-papelao.svg" alt="Papéis e Papelão"/><span>Papéis e Papelão</span></li>
+                        <li><img src="http://localhost:3333/uploads/baterias.svg" alt="Baterias" /><span>Baterias</span></li>
+                        <li><img src="http://localhost:3333/uploads/eletronicos.svg" alt="Pilhas e Eletrônicos" /><span>Pilhas e Eletrônicos</span></li>
+                        <li><img src="http://localhost:3333/uploads/lampadas.svg" alt="Lâmpadas" /><span>Lâmpadas</span></li>
+                        <li><img src="http://localhost:3333/uploads/oleo.svg" alt="Óleo de Cozinha" /><span>Óleo de Cozinha</span></li>
+                        <li><img src="http://localhost:3333/uploads/organicos.svg" alt="Orgânicos" /><span>Orgânicos</span></li>
+                        <li className="selected"><img src="http://localhost:3333/uploads/papeis-papelao.svg" alt="Papéis e Papelão" /><span>Papéis e Papelão</span></li>
                     </ul>
                 </fieldset>
             </form>
