@@ -1,49 +1,25 @@
 import express from 'express';
 
-/**
- * 
- * Request Param is a parameter type that are sent in the route itself and identifies a recurse
- * 
- * Query Param is similar to request param, but normally it is optional (such as filtering params)
- * Eg.: route/recurse?queryParamName=queryParamValue(to be searched)
- * 
- * Request Body Param: creates/updates info
- * 
- */
-
-
 // Creates express app with its methods
 const app = express();
 
 // Declaring that JSON resource will be used
 app.use(express.json());
 
-// Defines a users array
+// Defines a users array (temporary, for testing purpose)
 const users = [
     'Fulano',
     'Ciclano',
     'Beltrano'
 ]
 
-/**
- * Defines users recurses route, where
- *  'get' is the method chosen
- *  'users' is the recurse
- * We can access the exactly same route and 
- * get different results according to the method
- */
+// A get route to list all users
 app.get('/users', (request, response) => {
 
     // Defining a query param named search (we're definig as string temporarely, to avoid type errros)
     const search = String(request.query.search);
 
-    /**
-     * Filtering users by
-     * filtering users array and
-     * checking if any ocurrence includes the searched term
-     * IF there is any search query param,
-     * ELSE returns users complete array
-     */
+    // Filters users by specific term if search is present on request
     const filteredUsers = search ? users.filter(user => user.includes(search)) : users;
 
     // Returns users JSON
@@ -64,7 +40,7 @@ app.get('/users/:id', (request, response) => {
 
 })
 
-// Creating a post route using the same users recurse
+// Creating a post route using the same users resource
 app.post('/users', (request, response) => {
 
     // Getting info from body request
