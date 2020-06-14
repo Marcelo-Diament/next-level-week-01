@@ -11,7 +11,8 @@ const connection = knex({
     connection: {
         // Defines path to db file using path lib
         filename: path.resolve(__dirname, 'database.sqlite')
-    }
+    },
+    useNullAsDefault: true
 });
 
 // Export connection (making it avaliable)
