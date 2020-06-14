@@ -1,9 +1,14 @@
 import React from 'react';
 import './App.css';
 
+import Header from './Header';
+
 function App() {
   return (
-    <h1>Esse é o componente <code>src/App.tsx</code>.</h1>
+    <div>
+      <Header />
+      <h2>Conteúdo da Aplicação</h2>
+    </div>
   );
 }
 
