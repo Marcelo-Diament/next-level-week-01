@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 
 // Imports routes files
 import routes from './routes';
@@ -11,6 +12,9 @@ app.use(express.json());
 
 // Using routes
 app.use(routes);
+
+// Using uploads folder to access static files
+app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 
 // Defines port to access app
 app.listen(3333);
