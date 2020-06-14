@@ -8,7 +8,7 @@ export async function up(knex: Knex) {
         // Creating table columns/fields
         table.increments('id').primary();
         // Defining foreign keys
-        table.integer('item_point').notNullable().references('id').inTable('points');
+        table.integer('point_id').notNullable().references('id').inTable('points');
         table.integer('item_id').notNullable().references('id').inTable('items');
     });
 }
