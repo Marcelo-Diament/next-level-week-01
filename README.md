@@ -26,6 +26,22 @@ Request Body Param: creates/updates info
 ### About DB Queries and Knex.js
 knex.js is a query builder that makes query building syntax easier than sql (similar to js)
 
+
+## Project Structre
+
+### server > database
+Has all DB files
+
+### server > database > connection.ts
+Defines connection
+
+### server > server.ts
+Responsable for the app itself
+
+### server > routes.ts
+Responsable for the project routes
+
+
 ## Tools and Resources
 
 ### Chocolatey
