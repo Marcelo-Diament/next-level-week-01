@@ -1,6 +1,5 @@
 import path from 'path';
 
-// We can't use export default with knex.js, thats why we're using this way of defining module
 module.exports = {
     client: 'sqlite3',
     connection: {
