@@ -36,11 +36,29 @@ In each migration file, we have the up method (when we create a table) and down 
 
 ## Project Structre
 
+### server > controllers
+Contains business rules (logic functions)
+
+### server > controllers > ItemsController.ts
+Functions related to Items
+
+### server > controllers > PointsController.ts
+Functions related to Points
+
 ### server > database
 Has all DB files
 
 ### server > database > connection.ts
 Defines connection
+
+### server > database > database.sqlite
+Stores DB schemas/tables
+
+### server > database > seeds
+Stores seeders scripts to populate our DB without CRUD actions
+
+### server > database > seeds > create_items.ts
+Create predefined items
 
 ### server > database > migrations
 Stores migration related files (one for each schema in the DB)
@@ -53,6 +71,9 @@ Responsable for items schema
 
 ### server > database > migrations > 02_create_point_items.ts
 Responsable for the schema that relates n items to a specific point (1:n relation)
+
+### server > uploads
+Stores static files such as images
 
 ### server > knexfile.ts
 Module that has extra info related to DB (that are not included on connection file)
