@@ -103,3 +103,7 @@ A browser extension that 'preetyfies' JSON files in the browser
 Similar to Postman, helps us to test requests that are not acessible through browser (such as post methods)
 (Insomnia)[https://insomnia.rest/download/#windows]
 
+### Leaflet
+A lib for js mobile-friendly interactive maps
+(LeafLetjs)[https://leafletjs.com/examples/quick-start/]
+(React LeafLet)[https://react-leaflet.js.org/docs/en/installation]
